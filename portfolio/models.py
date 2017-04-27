@@ -11,7 +11,7 @@ class Project(models.Model):
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def get_absolute_url(self):
-        return reverse('index')
+        return reverse('portfolio:detail')
     def __str__(self):
         return self.project_name;
     

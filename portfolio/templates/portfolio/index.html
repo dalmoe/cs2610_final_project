@@ -2,7 +2,7 @@
 {% if object_list %}
     <ul>
         {% for post in object_list %}
-        <li>{{ post.project_name }}</li>
+        <li><a href="{% url 'portfolio:detail' post.id %}">{{ post.project_name }}</a></li>
         {% endfor %}
     </ul>
 

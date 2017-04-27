@@ -14,3 +14,6 @@ class CreateProject(CreateView):
     model = Project
     fields = ["project_name", "project_description", "project_source"]
     
+class DetailView(generic.DetailView):
+    model = Project
+    template_name = 'portfolio/detail.html'
