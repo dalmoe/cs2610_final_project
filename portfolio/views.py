@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.views import generic
+from django.views.generic.edit import CreateView
 from .models import Project
 # Create your views here.
 class IndexView(generic.ListView):
@@ -9,5 +10,7 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Project.objects.order_by('-pub_date')[:10]
 
-def index(request):
-    return HttpResponse("You are at the index")
+class CreateProject(CreateView):
+    model = Project
+    fields = ["project_name", "project_description", "project_source"]
+    

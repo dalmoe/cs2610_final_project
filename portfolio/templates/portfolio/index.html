@@ -1,0 +1,15 @@
+<h1>Latest Projects</h1>
+{% if latest_posts_list %}
+    <ul>
+        {% for post in latest_posts_list %}
+        <li>{{ post.project_name }}</li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No projects have been posted</p>
+{% endif %}
+
+<form method="get" action="/portfolio/create">
+    <button type="submit">Create new post</button>
+</form>
