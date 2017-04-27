@@ -1,7 +1,7 @@
 <h1>Latest Projects</h1>
-{% if latest_posts_list %}
+{% if object_list %}
     <ul>
-        {% for post in latest_posts_list %}
+        {% for post in object_list %}
         <li>{{ post.project_name }}</li>
         {% endfor %}
     </ul>

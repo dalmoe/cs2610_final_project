@@ -8,7 +8,7 @@ class IndexView(generic.ListView):
     context_object_list = 'latest_posts_list'
     
     def get_queryset(self):
-        return Project.objects.order_by('-pub_date')[:10]
+        return Project.objects.order_by('-pub_date')[:5]
 
 class CreateProject(CreateView):
     model = Project
