@@ -1,15 +1,20 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}" />
 <h1>Latest Projects</h1>
-{% if object_list %}
-    <ul>
+<div class="content">
+    {% if object_list %}
         {% for post in object_list %}
-        <li><a href="{% url 'portfolio:detail' post.id %}">{{ post.project_name }}</a></li>
+            <div class="projectEntry">
+                <h3><a href="{% url 'portfolio:detail' post.id %}">{{ post.project_name }}</a></h3>
+                <p>{{ post.project_description }}</p>
+            </div>
         {% endfor %}
-    </ul>
-
-{% else %}
-    <p>No projects have been posted</p>
-{% endif %}
-
-<form method="get" action="/portfolio/create">
-    <button type="submit">Create new post</button>
-</form>
+    {% else %}
+        <p>No projects have been posted</p>
+    {% endif %}
+</div>
+<div id="buttonDiv">
+    <form method="get" action="/portfolio/create">
+        <button id="createButton" type="submit">Create new post</button>
+    </form>
+</div>

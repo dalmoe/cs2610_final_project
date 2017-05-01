@@ -1,3 +1,8 @@
-<h1>{{ project.project_name }}</h1>
-<p>{{ project.project_description }}</p>
-<a href="{{ project.project_source }}">{{ project.project_source }}</a>
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}"/>
+<div class="content">
+    <h1>{{ project.project_name }}</h1>
+    <p>{{ project.project_description }}</p>
+    <a href="{{ project.project_source }}">{{ project.project_source }}</a>
+</div>

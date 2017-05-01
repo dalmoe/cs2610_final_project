@@ -1,8 +1,14 @@
-<form action="" method="post">
-    {% csrf_token %}
-    {% for field in form %}
-        <label>{{ field.label_tag }}</label>
-        <div>{{ field }}</div>
-    {% endfor %}
-    <button type="submit">Submit</button>
-</form>
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}" />
+
+<div class="content">
+    <form action="" method="post" name="project_form">
+        {% csrf_token %}
+        {% for field in form %}
+            <label>{{ field.label_tag }}</label>
+            <div>{{ field }}</div>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</div>
